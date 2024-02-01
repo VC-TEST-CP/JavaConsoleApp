@@ -1,0 +1,285 @@
+{
+   "_links": {
+      "root": {
+         "href": "/",
+         "name": "",
+         "templated": false
+      },
+      "self": {
+         "href": "/scans/4ebe8df7-5149-41b0-9c21-95217fb8ecfd/findings",
+         "name": "",
+         "templated": false
+      },
+      "help": {
+         "href": "https://help.veracode.com/reader/tS9CaFwL4_lbIEWWomsJoA/ovfZGgu96UINQxIuTqRDwg",
+         "name": "",
+         "templated": false
+      },
+      "create": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "start": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "details": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "upload": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "cancel": {
+         "href": "",
+         "name": "",
+         "templated": false
+      }
+   },
+   "scan_id": "4ebe8df7-5149-41b0-9c21-95217fb8ecfd",
+   "scan_status": "SUCCESS",
+   "message": "Scan successful. Results size: 9720 bytes",
+   "modules": [
+      "JS files within sql1.zip"
+   ],
+   "modules_count": 1,
+   "findings": [
+      {
+         "title": "!js_template_sql",
+         "issue_id": 1003,
+         "gob": "B",
+         "severity": 4,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+         "cwe_id": "89",
+         "display_text": "\u003cspan\u003eThis database query contains a SQL injection flaw.  The call to !js_template_sql() constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database. \u003c/span\u003e \u003cspan\u003eAvoid dynamically constructing SQL queries.  Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/89.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/SQL_Injection\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "sql.js",
+               "line": 14,
+               "function_name": "lambda_2",
+               "qualified_function_name": "lambda_2",
+               "function_prototype": "lambda_2(: any,  : express::Request,  : express::Response, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3777337876",
+            "prototype_hash": "2230311144",
+            "flaw_hash": "444083583",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "3645724628",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "1522093433",
+            "cause_hash2_ordinal": "5"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "lambda_2",
+                        "SourceFile": "sql.js",
+                        "SourceLine": "13",
+                        "SourceFileId": "1",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "lambda_2",
+                        "FunctionPrototype": "lambda_2(: any,  : express::Request,  : express::Response, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "UNKNOWN",
+                        "SourceLine": "-1",
+                        "SourceFileId": "-1",
+                        "StatementText": {},
+                        "VarNames": "express::Request(/**X-VC scoperef targetid=\"44543\" */!req/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/89.html"
+      },
+      {
+         "title": "mysql.Connection.query",
+         "issue_id": 1002,
+         "gob": "B",
+         "severity": 4,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+         "cwe_id": "89",
+         "display_text": "\u003cspan\u003eThis database query contains a SQL injection flaw.  The call to mysql.Connection.query() constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database. \u003c/span\u003e \u003cspan\u003eAvoid dynamically constructing SQL queries.  Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/89.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/SQL_Injection\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "sql.js",
+               "line": 16,
+               "function_name": "lambda_2",
+               "qualified_function_name": "lambda_2",
+               "function_prototype": "lambda_2(: any,  : express::Request,  : express::Response, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3777337876",
+            "prototype_hash": "2230311144",
+            "flaw_hash": "3218150524",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "3903414968",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "1522093433",
+            "cause_hash2_ordinal": "3"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "lambda_2",
+                        "SourceFile": "sql.js",
+                        "SourceLine": "15",
+                        "SourceFileId": "1",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "lambda_2",
+                        "FunctionPrototype": "lambda_2(: any,  : express::Request,  : express::Response, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "UNKNOWN",
+                        "SourceLine": "-1",
+                        "SourceFileId": "-1",
+                        "StatementText": {},
+                        "VarNames": "express::Request(/**X-VC scoperef targetid=\"44543\" */!req/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/89.html"
+      },
+      {
+         "title": "password",
+         "issue_id": 1000,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "crypto",
+         "issue_type": "Use of Hard-coded Password",
+         "cwe_id": "259",
+         "display_text": "\u003cspan\u003eThis variable assignment uses a hard-coded password that may compromise system security in a way that cannot be easily remedied.  The use of a hard-coded password significantly increases the possibility that the account being protected will be compromised.  Moreover, the password cannot be changed without patching the software.  If a hard-coded password is compromised in a commercial product, all deployed instances may be vulnerable to attack.  In some cases, this finding may indicate a reference to a password (e.g. the name of a key in a properties file) rather than an actual password. password\u003c/span\u003e \u003cspan\u003eStore passwords out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files. An HSM may be appropriate for particularly sensitive credentials.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/259.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "sql.js",
+               "line": 8,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "2512067829",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3465746774",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "54793646",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/259.html"
+      },
+      {
+         "title": "express.Response.send",
+         "issue_id": 1001,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to express.Response.send() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "sql.js",
+               "line": 18,
+               "function_name": "lambda_1",
+               "qualified_function_name": "lambda_1",
+               "function_prototype": "lambda_1(: any,  : any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "661814858",
+            "prototype_hash": "1363292043",
+            "flaw_hash": "3132762339",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1176028798",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "1522093433",
+            "cause_hash2_ordinal": "3"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "lambda_1",
+                        "SourceFile": "sql.js",
+                        "SourceLine": "17",
+                        "SourceFileId": "1",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "lambda_1",
+                        "FunctionPrototype": "lambda_1(: any,  : any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "lambda_1",
+                        "SourceFile": "sql.js",
+                        "SourceLine": "17",
+                        "SourceFileId": "1",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"44574\" */result/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_1",
+                        "FunctionPrototype": "lambda_1(: any,  : any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "2",
+                        "FunctionName": "lambda_1",
+                        "SourceFile": "sql.js",
+                        "SourceLine": "15",
+                        "SourceFileId": "1",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC defscope id=\"44574\" */var result : any/**X-VC /defscope */",
+                        "QualifiedFunctionName": "lambda_1",
+                        "FunctionPrototype": "lambda_1(: any,  : any,  : any, ...) : any"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      }
+   ],
+   "selected_modules": []
+}
