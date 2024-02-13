@@ -1,5 +1,7 @@
 package org.example;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Database connection details
+        // Database connection
         String url = "jdbc:mysql://localhost:3306/your_database";
         String user = "your_username";
         String password = "your_password";

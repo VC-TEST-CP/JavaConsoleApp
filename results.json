@@ -6,7 +6,7 @@
          "templated": false
       },
       "self": {
-         "href": "/scans/4dbc11d8-eccb-4331-8b07-d542a0bb45d2/findings",
+         "href": "/scans/ac8d0cc2-362b-4fac-9ad0-ead82c523860/findings",
          "name": "",
          "templated": false
       },
@@ -41,7 +41,7 @@
          "templated": false
       }
    },
-   "scan_id": "4dbc11d8-eccb-4331-8b07-d542a0bb45d2",
+   "scan_id": "ac8d0cc2-362b-4fac-9ad0-ead82c523860",
    "scan_status": "SUCCESS",
    "message": "Scan successful. Results size: 9896 bytes",
    "modules": [
